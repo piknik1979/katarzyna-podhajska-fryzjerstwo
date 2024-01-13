@@ -16,13 +16,12 @@ function Home() {
       >
         <div className="content">
           <div className="title">
-            <h1>Blossoms Parlour</h1>
+            <h1>Katarzyna Podhajska Fryzjerstwo</h1>
           </div>  
           <div className="subTitle">
             <p>
-              At the Beauty Parlour, we believe in beauty with a conscience. 
-              We have created a salon that offers the highest quality hair 
-              services.
+              My tu kurde, Walduś włoski obcinamy. Jeśli chcesz z Mariolką
+              tuy uprzyjść i się obcionć to daj znać!
             </p>  
           </div>
           <img src={play} alt="Play Button" />
@@ -35,31 +34,31 @@ function Home() {
       >
           <div className="grid">
             <div className="col">
-                <strong>Parlour</strong>
-                <p>Blossoms Academy</p>
+                <strong>Zakład Fryzjerski</strong>
+                <p>Katarzyna Podhajska Fryzjerstwo</p>
             </div>
             <div className="col">
                 <strong>Email</strong>
-                <p>blossoms@gmail.com</p>
+                <p>katarzyna-podhajska-fryzjerstwto@gmail.com</p>
             </div> 
             <div className="col">
-                <strong>Mobile</strong>
-                <p>+91 8897666511</p>
+                <strong>MTelefon</strong>
+                <p>+48 8897666511</p>
             </div> 
             <div className="col">
-                <strong>Address</strong>
-                <p>322, Long Fly,</p>
-                <p>997773 India</p>
+                <strong>Addres</strong>
+                <p>Świętojańska 111</p>
+                <p>81-222 Gdynia</p>
             </div> 
             <div className="col">
-                <strong>Services</strong>
-                <p>Sparking</p>
-                <p>SPA Cream</p>
+                <strong>Usługi</strong>
+                <p>Obcinanko</p>
+                <p>Golonko</p>
             </div> 
             <div className="col">
-                <strong>Working Hours</strong>
-                <p>Monday to Friday</p>
-                <p>08:00 to 09:00</p>
+                <strong>Godziny otwarcia</strong>
+                <p>Poniedziałek - Sobota</p>
+                <p>08:00 do 16:00</p>
             </div>   
           </div>
       </motion.div>

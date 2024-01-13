@@ -14,18 +14,18 @@ function Services() {
 
   const data = [
     {
-      type: "Blowout",
-      text: "Shampoo and blow dry. If you are looking to celebrate your special day with us, please note we only have 3 stylists scheduled",
+      type: "Obcinanko",
+      text: "Myjemy włoski, obcinamy i ścinamy",
       image: service1,
     },
     {
-      type: "Olaplex",
-      text: "Hair treatment helping keep coloured hair healthy from the inside If you are looking to celebrate your special day with us.",
+      type: "Koloryzacja włosów",
+      text: "Strzyżenie razem z obcinaniem paznokci i polaryzacja głowy.",
       image: service2,
     },
     {
-      type: "Retouch",
-      text: "We bring to you a bouquet of services to remain worry free about your looks. We have made effortless beauty equipment and products.",
+      type: "Tortury",
+      text: "Na specjalne życzenie klientów: tortury piłą tarczową, miażdżenie nóżek, rozciąganie nadgarstków.",
       image: service3,
     },
   ];

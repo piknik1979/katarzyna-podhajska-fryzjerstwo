@@ -16,18 +16,18 @@ function Milestones() {
   const milestone = [
     {
       image: milestone1,
-      data: "Client Served",
-      amount: "877",
+      data: "Klientów obsłużonych",
+      amount: "8771",
     },
     {
       image: milestone2,
-      data: "of raw data",
+      data: "wyciętych włosów",
       amount: "1.4M",
     },
     {
       image: milestone3,
-      data: "Reviews",
-      amount: "5.4K",
+      data: "Opinie",
+      amount: "5000",
     },
 ]
   return <Section ref={element}>

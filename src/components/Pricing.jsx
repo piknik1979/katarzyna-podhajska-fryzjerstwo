@@ -12,7 +12,7 @@ function Pricing() {
   const [element, controls] = useScroll();
   const plans = [
     {
-      name: "Basic",
+      name: "Podstawowe",
       price: 13,
     },
     {
@@ -20,7 +20,7 @@ function Pricing() {
       price: 35,
     },
     {
-      name: "Expert",
+      name: "Dla Vipów",
       price: 77,
     },
   ];
@@ -28,27 +28,27 @@ function Pricing() {
   const data = [
     {
       value: "Full face Rs.250",
-      type: "Basic",
+      type: "Podstawowe",
     },
     {
       value: "Cheeks Rs. 90",
-      type: "Basic",
+      type: "Podstawowe",
     },
     {
       value: "Jawline Rs.50",
-      type: "Basic",
+      type: "Podstawowe",
     },
     {
       value: "Lower Lip Rs.50",
-      type: "Basic",
+      type: "Podstawowe",
     },
     {
       value: "Upper Lip Rs.50",
-      type: "Basic",
+      type: "Podstawowe",
     },
     {
       value: "Under arms Rs.100",
-      type: "Basic",
+      type: "Podstawowe",
     },
     {
       value: "Full Legs Rs.450",
@@ -60,11 +60,11 @@ function Pricing() {
     },
     {
       value: "Daily Backups",
-      type: "Expert",
+      type: "Dla Vipów",
     },
     {
       value: "One Click Setup",
-      type: "Expert",
+      type: "Dla Vipów",
     },
   ]
 
@@ -76,8 +76,8 @@ function Pricing() {
         <img src={pricing2} alt="background" className="bg2" />
       </div>
       <div className="pricing__title">
-        <p>Find your pricing plan</p>
-        <h2>Finding the best salons in your city could be time consuming..</h2>
+        <p>Zamów wizyte</p>
+        <h2>Zgodnie z tym ile masz kaski w portfelu...</h2>
       </div>
       <div className="pricing">
         {plans.map(({ name, price }, index) => {
@@ -104,28 +104,28 @@ function Pricing() {
                   {data.map(({ value, type }, index2) => {
                     return (
                       <Fragment key={index2}>
-                        {name === "Basic" ? (
+                        {name === "Podstawowe" ? (
                           type === name ? (
                             <li>{value}</li>
                           ) : (
                             <li className="line">{value}</li>
                           )
                         ) : name === "Pro" ? (
-                          type === "Basic" || type === name ? (
+                          type === "Podstawowe" || type === name ? (
                             <li>{value}</li>
                           ) : (
                             <li className="line">{value}</li>
                           )
                         ) : (
-                          name === "Expert" && <li>{value}</li>
+                          name === "Dla Vipów" && <li>{value}</li>
                         )}
                       </Fragment>
                     );
                   })}
                 </ul>
                 <div className="pricing__plan__content__actions">
-                  <span>Order Now</span>
-                  <img src={play} alt="Order Now" />
+                  <span>Zamów Wizyte</span>
+                  <img src={play} alt="Zamów Wizyte" />
                 </div>
               </div>
             </motion.div>

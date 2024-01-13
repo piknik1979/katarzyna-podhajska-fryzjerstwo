@@ -25,13 +25,12 @@ function Contact() {
         </div>
         <div className="contact__data">
           <div className="contact__data__description">
-            <h4>Just to say hi !!</h4>
+            <h4>Dzieńdoberek !!</h4>
             <p>
-              If you have any questions simply use the following contact details.
+              W razie jakichkolwiek pytań prosze pisać:
             </p>
             <p>
-              Business Owners to take their Online Presence 
-              to the next level. We are in the business of Bulk SMS, Digital Marketing.
+              Co chcecie to robimy, tylko płaćcie kaske!
             </p>
             <div>
               <p>
@@ -49,7 +48,7 @@ function Contact() {
             <input type="text" placeholder='name' />
             <input type="email" placeholder='email' />
             <textarea placeholder='message'></textarea>
-            <button>Send Message</button>
+            <button>Wyślij wiadomość</button>
           </div>
         </div>
       </motion.div>

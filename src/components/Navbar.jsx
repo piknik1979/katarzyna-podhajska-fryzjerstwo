@@ -43,10 +43,10 @@ function Navbar() {
     <div className={`links ${isNavOpen ? "show" : ""}`}>
     <ul>
         <li className="active">
-            <a href="#home">Home</a>
+            <a href="#home">Strona Główna</a>
           </li>
           <li>
-            <a href="#services">Services</a>
+            <a href="#services">Usługi</a>
           </li>
           <li>
             <a href="#portfolio">Portfolio</a>
@@ -55,10 +55,10 @@ function Navbar() {
             <a href="#blog">Blog</a>
           </li>
           <li>
-            <a href="#skills">Skills</a>
+            <a href="#skills">Nasze osiągniecia</a>
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            <a href="#contact">Kontakt</a>
           </li>
         </ul>
     </div>

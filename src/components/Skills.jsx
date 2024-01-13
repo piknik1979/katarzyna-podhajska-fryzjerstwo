@@ -9,19 +9,19 @@ function Skills() {
   const [element, controls] = useScroll();
   const skillsData = [
     {
-      name: "Facial",
+      name: "Obcinanko",
       amount: 75,
     },
     {
-      name: "Skin",
+      name: "Polerowanko Łepetyny",
       amount: 50,
     },
     {
-      name: "SPA",
+      name: "Kolorowanko",
       amount: 90,
     },
     {
-      name: "Cosmetic",
+      name: "Kosmetyka",
       amount: 70,
     },
     {
@@ -33,7 +33,7 @@ function Skills() {
     <Section id="skills" ref={element}>
       <Title value="skills" />
       <div className="skills__title">
-        <p>Our Skills</p>
+        <p>Co robimy</p>
         <h2>Check our super awesome skills</h2>
       </div>
       <div className="skills">
