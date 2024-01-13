@@ -11,6 +11,11 @@ import { navAnimation } from "animation";
 function Navbar() {
   const [isNavOpen,setIsNavOpen] = useState(false);
   const [element, controls] = useScroll();
+
+  const handleButtonClick = () => {
+    // Tutaj dodaj logikę obsługi kliknięcia na przycisk
+    console.log('Button clicked!');
+  };
   return <Nav ref={element}
   variants={navAnimation}
   transition={{ delay: 0.1 }}
@@ -18,22 +23,23 @@ function Navbar() {
   state={isNavOpen ? 1 : 0}
   >
     <div className="brand__container">
-      <a href="#" className='brand'>
-        <img src={logo} alt="logo" />
-      </a>  
-      <div className="toggle">
-        {isNavOpen ? (
-          <MdClose onClick={ () => setIsNavOpen(false)} />
-        ) : (
-          <GiHamburgerMenu
-            onClick={ (e) => {
-              e.stopPropagation();
-              setIsNavOpen(true);
-            }}
-            />
-        )}
-      </div>
-    </div>
+  <button type="button" className='brand' onClick={() => handleButtonClick()}>
+    <img src={logo} alt="logo" />
+  </button>  
+  <div className="toggle">
+    {isNavOpen ? (
+      <MdClose onClick={() => setIsNavOpen(false)} />
+    ) : (
+      <GiHamburgerMenu
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsNavOpen(true);
+        }}
+      />
+    )}
+  </div>
+</div>
+
     <div className={`links ${isNavOpen ? "show" : ""}`}>
     <ul>
         <li className="active">

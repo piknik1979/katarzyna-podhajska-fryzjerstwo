@@ -40,3 +40,14 @@ button {
     display: none;
   }
 }
+
+/* Dodaj do swojego arkusza stylów (np. index.css) */
+.button-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  color: blue; /* Lub dostosuj kolor, aby pasował do stylu twojej strony */
+}
