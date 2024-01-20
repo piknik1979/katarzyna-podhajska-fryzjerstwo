@@ -20,8 +20,9 @@ function Home() {
           </div>  
           <div className="subTitle">
             <p>
-              My tu kurde, Walduś włoski obcinamy. Jeśli chcesz z Mariolką
-              tuy uprzyjść i się obcionć to daj znać!
+              "My tu kurde, Walduś włoski obcinamy. Jeśli chcesz z Mariolką
+              tuy uprzyjść i się obcionć to daj znać!"
+                          F. Kiepski
             </p>  
           </div>
           <img src={play} alt="Play Button" />
