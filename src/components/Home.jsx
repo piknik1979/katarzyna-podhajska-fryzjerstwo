@@ -21,7 +21,7 @@ function Home() {
           <div className="subTitle">
             <p>
               "My tu kurde, Walduś włoski obcinamy. Jeśli chcesz z Mariolką
-              tuy uprzyjść i się obcionć to daj znać!"
+              tu uprzyjść i się obcionć to daj znać!"
                           F. Kiepski
             </p>  
           </div>
@@ -87,6 +87,7 @@ const Section = styled.section`
         h1 {
           font-size: 5rem;
           line-height: 5.3rem;
+          color: #e47194;
         }
       }
       .subTitle {
