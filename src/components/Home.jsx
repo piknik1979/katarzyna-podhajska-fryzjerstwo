@@ -135,6 +135,8 @@ const Section = styled.section`
     }
   }
   @media screen and (min-width: 280px) and (max-width: 1080px) {
+    background-position: top left; /* Przesunięcie tła w lewy dolny róg */
+    background-size: 210%; /* Powiększenie obrazu tła */
     .home {
       .content {
         padding-left: 2rem;
