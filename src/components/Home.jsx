@@ -34,10 +34,15 @@ function Home() {
       transition={{ delay: 0.3, duration: 0.6, type: "tween" }}
       >
           <div className="grid">
-            <div className="col">
+            {/* <div className="col">
                 <strong>Zakład Fryzjerski</strong>
                 <p>Katarzyna Podhajska Fryzjerstwo</p>
-            </div>
+            </div> */}
+             <div className="col">
+                <strong>Adres</strong>
+                <p>Świętojańska 111</p>
+                <p>81-222 Gdynia</p>
+            </div> 
             <div className="col">
                 <strong>Email</strong>
                 <p>podhajskakatarzyna@gmail.com</p>
@@ -45,11 +50,6 @@ function Home() {
             <div className="col">
                 <strong>Telefon</strong>
                 <p>+48 508323986</p>
-            </div> 
-            <div className="col">
-                <strong>Adres</strong>
-                <p>Świętojańska 111</p>
-                <p>81-222 Gdynia</p>
             </div> 
             <div className="col">
                 <strong>Social Media</strong>
