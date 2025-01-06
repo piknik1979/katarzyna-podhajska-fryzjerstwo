@@ -7,7 +7,8 @@ import { useScroll } from "./useScroll";
 function Video() {
   const [element, controls] = useScroll();
   return (
-    <Section ref={element}>
+    
+    <Section id="video" ref={element}>
       <div className="background"></div>
       <motion.div className="video"
       variants={videoAnimations}
@@ -21,9 +22,9 @@ function Video() {
       <iframe
           width="960"
           height="515"
-          src="https://www.youtube.com/embed/2ffOXOfZzn0"
+          src="https://www.youtube.com/embed/J---aiyznGQ"
           title="YouTube video player"
-          frameBorder="0"
+          style={{ border: "none" }} /* Zamiast frameBorder */
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>

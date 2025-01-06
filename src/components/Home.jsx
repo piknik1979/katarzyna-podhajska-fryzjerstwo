@@ -5,6 +5,8 @@ import play from "assets/play.png";
 import Navbar from './Navbar';
 import { motion } from "framer-motion";
 import { homeAnimation, homeInfoAnimation } from "animation";
+import { BsFacebook} from 'react-icons/bs';
+
 
 function Home() {
   return (
@@ -20,8 +22,7 @@ function Home() {
           </div>  
           <div className="subTitle">
             <p>
-              "My tu kurde, Walduś włoski obcinamy. Jeśli chcesz z Mariolką
-              tu uprzyjść i się obcionć to daj znać!"
+              "Kto nożyczkami wojuje, od nożyczek ginie!"
                           F. Kiepski
             </p>  
           </div>
@@ -40,26 +41,48 @@ function Home() {
             </div>
             <div className="col">
                 <strong>Email</strong>
-                <p>katarzyna-podhajska-fryzjerstwto@gmail.com</p>
+                <p>podhajskakatarzyna@gmail.com</p>
             </div> 
             <div className="col">
-                <strong>MTelefon</strong>
-                <p>+48 8897666511</p>
+                <strong>Telefon</strong>
+                <p>+48 508323986</p>
             </div> 
             <div className="col">
-                <strong>Addres</strong>
+                <strong>Adres</strong>
                 <p>Świętojańska 111</p>
                 <p>81-222 Gdynia</p>
             </div> 
             <div className="col">
-                <strong>Usługi</strong>
-                <p>Obcinanko</p>
-                <p>Golonko</p>
-            </div> 
-            <div className="col">
+                <strong>Social Media</strong>
+                <p>
+                  <BsFacebook/>
+                    <a 
+                        href="https://www.facebook.com/katarzyna.podhajskafryzjerstwo" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                    >
+                      Facebook
+                    </a>
+                </p>
+                <p>
+                    <a 
+                        href="https://booksy.com/pl-pl/72069_katarzyna-podhajska-fryzjerstwo_fryzjer_21029_gdynia#ba_s=seo" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                    >
+                        Booksy
+                    </a>
+                </p>
+            </div>
+            <div className="col"> 
                 <strong>Godziny otwarcia</strong>
-                <p>Poniedziałek - Sobota</p>
-                <p>08:00 do 16:00</p>
+                <p>Poniedziałek - Zamknięte</p>
+                <p>Wtorek       - 9:00 - 15:00</p>
+                <p>Środa        - 9:00 - 14:45</p>
+                <p>Czwartek     - 9:00 - 15:00</p>
+                <p>Piątek       - 11:00- 18:00</p>
+                <p>Sobota       - 9:00 - 15:00</p>
+                <p>Niedziela    - Zamknięte</p>
             </div>   
           </div>
       </motion.div>
@@ -100,7 +123,7 @@ const Section = styled.section`
   }
   .info {
     position: absolute;
-    bottom: -6rem;
+    bottom: 0rem;
     right: 0;
     background-color: var(--secondary-color);
     padding: 4rem;

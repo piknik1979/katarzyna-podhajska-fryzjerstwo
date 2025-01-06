@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
-import logo from "assets/logo.png";
+// import logo from "assets/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
 import { useScroll } from "components/useScroll";
@@ -24,7 +24,7 @@ function Navbar() {
   >
     <div className="brand__container">
   <button type="button" className='brand' onClick={() => handleButtonClick()}>
-    <img src={logo} alt="logo" />
+    {/* <img src={logo} alt="logo" /> */}
   </button>  
   <div className="toggle">
     {isNavOpen ? (
@@ -52,10 +52,10 @@ function Navbar() {
             <a href="#portfolio">Portfolio</a>
           </li>
           <li>
-            <a href="#blog">Blog</a>
+            <a href="#pricing">Pakiety</a>
           </li>
           <li>
-            <a href="#skills">Nasze osiągniecia</a>
+            <a href="#video">Szopen Włosów</a>
           </li>
           <li>
             <a href="#contact">Kontakt</a>
@@ -89,7 +89,7 @@ const Nav = styled(motion.nav)`
       }
       li {
         a {
-          color: #fff;
+          color: #000;
           text-decoration: none;
           font-weight: 400;
           font-size: 0.9rem;

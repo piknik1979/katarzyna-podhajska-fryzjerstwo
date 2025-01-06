@@ -1,29 +1,44 @@
-import React, {useState} from 'react';
-import styled from "styled-components";
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import { FaChevronUp } from 'react-icons/fa';
 
 function ScrollToTop() {
   const [visible, setVisible] = useState(false);
-  window.addEventListener("scroll", ()=> {
-    window.pageYOffset > 100 ? setVisible(true) : setVisible(false);
-  })
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 100) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <Div>
-    <button type="button" className={`button-link ${visible ? "block" : "none"}`}>
-    <FaChevronUp />
-    </button>
-</Div>
-
-  )
+      <button
+        type="button"
+        className={`button-link ${visible ? 'block' : 'none'}`}
+        onClick={scrollToTop}
+      >
+        <FaChevronUp />
+      </button>
+    </Div>
+  );
 }
 
 const Div = styled.div`
-max-width: 100vw;
-.none {
-  opacity: 0;
-  visibility: hidden;
-}
-a {
   position: fixed;
   bottom: 40px;
   right: 40px;
@@ -37,9 +52,12 @@ a {
   transition: 0.4s ease-in-out;
   svg {
     color: #fff;
-    font-size: 1.3rem
+    font-size: 1.3rem;
   }
-}
+  &.none {
+    opacity: 0;
+    visibility: hidden;
+  }
 `;
 
-export default ScrollToTop
+export default ScrollToTop;
