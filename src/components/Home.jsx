@@ -22,8 +22,7 @@ function Home() {
           </div>  
           <div className="subTitle">
             <p>
-              "Kto nożyczkami wojuje, od nożyczek ginie!"
-                          F. Kiepski
+            "Fryzjerzy to artyści, a włosy to ich płótno."
             </p>  
           </div>
           <img src={play} alt="Play Button" />
