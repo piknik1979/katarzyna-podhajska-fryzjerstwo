@@ -86,6 +86,7 @@ function Services() {
 
 const Section = styled.section`
   min-height: 100vh;
+
   .services {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -94,6 +95,7 @@ const Section = styled.section`
     margin: 0 14rem;
     margin-top: 10rem;
     gap: 5rem;
+
     &__service {
       padding: 2rem;
       &:nth-of-type(2) {
@@ -120,12 +122,43 @@ const Section = styled.section`
           line-height: 2.5rem;
           margin-bottom: 5rem;
           color: var(--secondary-color);
-          font-weight: bold; /* Dodano pogrubienie */
         }
       }
       &__description {
         color: var(--primary-color);
         margin-bottom: 2rem;
+      }
+    }
+  }
+
+  /* Wersja mobilna */
+  @media screen and (max-width: 1080px) {
+    .services {
+      display: flex;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 2rem;
+      margin: 0 2rem;
+      padding: 1rem 0;
+
+      &__service {
+        min-width: 80%;
+        flex: 0 0 auto;
+        scroll-snap-align: center;
+        background-color: #f9f9f9;
+        border-radius: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        &__image {
+          margin-bottom: 1rem;
+        }
+        &__title h2 {
+          font-size: 2rem;
+        }
+        &__description {
+          font-size: 1rem;
+        }
       }
     }
   }
