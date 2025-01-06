@@ -154,12 +154,22 @@ const Section = styled.section`
           margin-bottom: 1rem;
         }
         &__title h2 {
-          font-size: 2rem;
+          font-size: 1.8rem;
+          line-height: 2rem;
+          word-break: break-all; /* Dodano */
         }
         &__description {
           font-size: 1rem;
+          word-break: break-all; /* Umożliwia łamanie długich słów w opisie */
+          white-space: normal; /* Wymusza łamanie tekstu w description */
         }
       }
+    }
+
+    /* Styl dla tytułów w wersji mobilnej */
+    .services__service__title h2 {
+      word-wrap: break-word;
+      white-space: normal;
     }
   }
 `;
