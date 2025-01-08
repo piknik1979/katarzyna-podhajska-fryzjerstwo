@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import service1 from 'assets/service1.png';
 import service2 from 'assets/service2.png';
 import service3 from 'assets/service3.png';
-import play from 'assets/play.png';
+import booksyIcon from 'assets/logoBooksy.png'; // Ikona Booksy
 import Title from './Title';
 import { useScroll } from 'components/useScroll';
 import { motion } from 'framer-motion';
@@ -18,9 +18,8 @@ function Services() {
       text: (
         <>
           <p><strong>Strzyżenie damskie:</strong> obejmuje strzyżenie z modelowaniem oraz strzyżenie grzywki</p>
-          <p><strong>Strzyżenie damskie:</strong> obejmuje strzyżenie z modelowaniem oraz strzyżenie grzywki</p>
           <p><strong>Strzyżenie męskie:</strong> z myciem, modelowaniem, strzyżeniem brody i wąsów</p>
-          <p><strong>Strzyżenie dziecięce</strong></p>
+          <p><strong>Strzyżenie dziecięce:</strong> dostosowane do delikatnych włosów dzieci</p>
           <p><strong>Modelowanie:</strong> suszenie, loki, upięcia włosów, trwałe prostowanie, nanoplastia</p>
         </>
       ),
@@ -76,7 +75,13 @@ function Services() {
               <h2>{type}</h2>
             </div>
             <div className="services__service__description">{text}</div>
-            <img src={play} alt="Read more" />
+            <div className="booksy-links">
+              <a href="https://booksy.com/pl-pl/72069_katarzyna-podhajska-fryzjerstwo_fryzjer_21029_gdynia#ba_s=seo" target="_blank" rel="noopener noreferrer">
+                <div className={`booksy-link ${index === 1 ? 'black-background' : ''}`}>
+                  <img src={booksyIcon} alt="Booksy" />
+                </div>
+              </a>
+            </div>
           </motion.div>
         ))}
       </div>
@@ -99,7 +104,7 @@ const Section = styled.section`
     &__service {
       padding: 2rem;
       &:nth-of-type(2) {
-        background-color: var(--primary-color);
+        background-color: #000;
         .services__service__title {
           span {
             color: #fff;
@@ -134,18 +139,14 @@ const Section = styled.section`
   /* Wersja mobilna */
   @media screen and (max-width: 1080px) {
     .services {
-      display: flex;
-      overflow-x: scroll;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
+      display: block;
       gap: 2rem;
-      margin: 0 2rem;
+      margin: 0;
       padding: 1rem 0;
 
       &__service {
-        min-width: 80%;
-        flex: 0 0 auto;
-        scroll-snap-align: center;
+        width: 100%;
+        margin-bottom: 2rem;
         background-color: #f9f9f9;
         border-radius: 1rem;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -156,20 +157,43 @@ const Section = styled.section`
         &__title h2 {
           font-size: 1.8rem;
           line-height: 2rem;
-          word-break: break-all; /* Dodano */
         }
         &__description {
           font-size: 1rem;
-          word-break: break-all; /* Umożliwia łamanie długich słów w opisie */
-          white-space: normal; /* Wymusza łamanie tekstu w description */
+          white-space: normal;
         }
       }
     }
+  }
 
-    /* Styl dla tytułów w wersji mobilnej */
-    .services__service__title h2 {
-      word-wrap: break-word;
-      white-space: normal;
+  /* Kontener dla ikon Booksy */
+  .booksy-links {
+    display: flex;
+    justify-content: center; /* Wycentrowanie ikon */
+    align-items: center; /* Wyrównanie ikon w jednej linii */
+    gap: 1.5rem; /* Odstęp pomiędzy ikonami */
+    margin-top: 1.5rem;
+  }
+
+  /* Stylowanie dla ikony Booksy */
+  .booksy-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 180px; /* Domyślna szerokość ikony */
+      height: auto;
+    }
+  }
+
+  /* Stylowanie czarnego tła dla ikony Booksy w temacie Koloryzacja */
+  .black-background {
+    background-color: #000;
+    border-radius: 50%;
+    padding: 1rem;
+    img {
+      width: 240px; /* Ikona większa w temacie Koloryzacja */
+      height: auto;
     }
   }
 `;
