@@ -63,7 +63,7 @@ const Div = styled.div`
 
   .text {
     margin-top: 4px;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     font-weight: bold;
     text-transform: uppercase;
     color: #fff;

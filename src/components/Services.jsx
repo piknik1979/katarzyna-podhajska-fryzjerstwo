@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import service1 from 'assets/service1.png';
 import service2 from 'assets/service2.png';
 import service3 from 'assets/service3.png';
-import booksyIcon from 'assets/logoBooksy.png'; // Ikona Booksy
+import booksyIcon from 'assets/logoBooksy.png'; // Domyślna ikona Booksy
+import booksyIconColoring from 'assets/booksyBack.png'; // Nowe logo dla Koloryzacji
 import Title from './Title';
 import { useScroll } from 'components/useScroll';
 import { motion } from 'framer-motion';
@@ -24,6 +25,7 @@ function Services() {
         </>
       ),
       image: service1,
+      booksyIcon: booksyIcon, // Domyślna ikona Booksy
     },
     {
       type: 'Koloryzacja i Zabiegi Chemiczne',
@@ -35,6 +37,7 @@ function Services() {
         </>
       ),
       image: service2,
+      booksyIcon: booksyIconColoring, // Nowe logo dla Koloryzacji
     },
     {
       type: 'Pielęgnacja i Regeneracja',
@@ -49,6 +52,7 @@ function Services() {
         </>
       ),
       image: service3,
+      booksyIcon: booksyIcon, // Domyślna ikona Booksy
     },
   ];
 
@@ -56,7 +60,7 @@ function Services() {
     <Section id="services" ref={element}>
       <Title value="usługi" />
       <div className="services">
-        {data.map(({ type, text, image }, index) => (
+        {data.map(({ type, text, image, booksyIcon }, index) => (
           <motion.div
             className="services__service"
             key={index}
@@ -172,7 +176,7 @@ const Section = styled.section`
     justify-content: center; /* Wycentrowanie ikon */
     align-items: center; /* Wyrównanie ikon w jednej linii */
     gap: 1.5rem; /* Odstęp pomiędzy ikonami */
-    margin-top: 1.5rem;
+    margin-top: 1.5rem; /* Domyślny odstęp od tekstu */
   }
 
   /* Stylowanie dla ikony Booksy */
@@ -192,9 +196,22 @@ const Section = styled.section`
     border-radius: 50%;
     padding: 1rem;
     img {
-      width: 240px; /* Ikona większa w temacie Koloryzacja */
+      width: 180px; /* Ikona Booksy w kategorii Koloryzacja ma tę samą szerokość */
       height: auto;
     }
+  }
+
+  /* Możliwość dodania indywidualnych odstępów dla poszczególnych sekcji */
+  .services__service:nth-child(1) .booksy-links {
+    margin-top: 3rem; /* Większy odstęp w pierwszej sekcji */
+  }
+
+  .services__service:nth-child(2) .booksy-links {
+    margin-top: 11.5rem; /* Mniejszy odstęp w drugiej sekcji */
+  }
+
+  .services__service:nth-child(3) .booksy-links {
+    margin-top: 8rem; /* Większy odstęp w trzeciej sekcji */
   }
 `;
 
