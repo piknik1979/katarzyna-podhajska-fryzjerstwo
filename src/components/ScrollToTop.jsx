@@ -26,14 +26,11 @@ function ScrollToTop() {
   };
 
   return (
-    <Div>
-      <button
-        type="button"
-        className={`button-link ${visible ? 'block' : 'none'}`}
-        onClick={scrollToTop}
-      >
+    <Div visible={visible} onClick={scrollToTop}>
+      <div className="icon">
         <FaChevronUp />
-      </button>
+      </div>
+      <div className="text">DO GÓRY</div>
     </Div>
   );
 }
@@ -42,21 +39,38 @@ const Div = styled.div`
   position: fixed;
   bottom: 40px;
   right: 40px;
-  background-color: var(--secondary-color);
-  padding: 1rem;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
+  display: ${({ visible }) => (visible ? 'flex' : 'none')};
+  flex-direction: column;
   align-items: center;
-  z-index: 1;
-  transition: 0.4s ease-in-out;
-  svg {
-    color: #fff;
-    font-size: 1.3rem;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: var(--secondary-color, #007bff);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      color: #fff;
+      font-size: 1.5rem;
+    }
   }
-  &.none {
-    opacity: 0;
-    visibility: hidden;
+
+  .text {
+    margin-top: 4px;
+    font-size: 0.6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  &:hover {
+    background-color: var(--primary-color, #0056b3);
   }
 `;
 
