@@ -64,11 +64,11 @@ function Contact() {
             <p>Jesteśmy do Twojej dyspozycji. Czekamy na Twoje pytania!</p>
             <div>
               <p><strong>Adres:</strong> ulica Świętojańska 83/83A</p>
-              <p> 1A lokal w bramie, Gdynia</p>
+              <p> 1A lokal w bramie, Gdynia, 81-389</p>
               <p><strong>Email:</strong> podhajskakatarzyna@gmail.com</p>
               <p><strong>Telefon:</strong> 508323986</p>
             </div>
-          </div>
+          </div>  
           <div className="contact__data__form">
             <input
               type="text"

@@ -40,8 +40,8 @@ function Home() {
             </div> */}
              <div className="col">
                 <strong>Adres</strong>
-                <p>Świętojańska 111</p>
-                <p>81-222 Gdynia</p>
+                <p>ulica Świętojańska 83/83A</p>
+                <p>1A lokal w bramie, Gdynia, 81-389</p>
             </div> 
             <div className="col">
                 <strong>Email</strong>
