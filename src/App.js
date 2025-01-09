@@ -9,7 +9,7 @@ import ScrollToTop from 'components/ScrollToTop';
 import Services from 'components/Services';
 // import Skills from 'components/Skills';
 import Testimonials from 'components/Testimonials';
-import Video from 'components/Video';
+// import Video from 'components/Video';
 import { motion } from 'framer-motion';
 import React from 'react';
 
@@ -22,7 +22,7 @@ function App() {
       <Portfolio />
       {/* <Milestones /> */}
       {/* <Blog /> */}
-      <Video />
+      {/* <Video /> */}
       <Pricing />
       <Testimonials />
       {/* <Skills /> */}
