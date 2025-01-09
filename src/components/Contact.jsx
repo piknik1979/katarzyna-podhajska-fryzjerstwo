@@ -59,11 +59,12 @@ function Contact() {
         </div>
         <div className="contact__data">
           <div className="contact__data__description">
-            <h4>Dzieńdoberek!!</h4>
-            <p>W razie jakichkolwiek pytań proszę pisać:</p>
-            <p>Co chcecie to robimy, tylko płaćcie kaske!</p>
+            <h4>Witam serdecznie!</h4>
+            <p>Jeśli masz jakiekolwiek pytania, proszę nie wahaj się skontaktować:</p>
+            <p>Jesteśmy do Twojej dyspozycji. Czekamy na Twoje pytania!</p>
             <div>
-              <p><strong>Adres:</strong> 111 Nowowiczlińska,</p>
+              <p><strong>Adres:</strong> ulica Świętojańska 83/83A</p>
+              <p> 1A lokal w bramie, Gdynia</p>
               <p><strong>Email:</strong> podhajskakatarzyna@gmail.com</p>
               <p><strong>Telefon:</strong> 508323986</p>
             </div>
@@ -92,6 +93,21 @@ function Contact() {
             <button onClick={handleSubmit}>Wyślij wiadomość</button>
             {status && <p>{status}</p>}
           </div>
+        </div>
+
+        {/* Google Maps iframe */}
+        <div className="contact__map">
+          <iframe
+            src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=54.512137898888106,18.539682888053047"
+            width="100%"
+            height="300"
+            frameBorder="0"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            aria-hidden="false"
+            tabIndex="0"
+            title="Lokalizacja zakładu na mapie Google"
+          />
         </div>
       </motion.div>
     </Section>
@@ -178,7 +194,12 @@ const Section = styled.section`
         }
       }
     }
+
+    &__map {
+      margin-top: 2rem;
+    }
   }
+
   @media screen and (min-width: 280px) and (max-width: 1080px) {
     .contact {
       margin: 1rem;
