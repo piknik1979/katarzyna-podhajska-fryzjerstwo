@@ -5,16 +5,16 @@ import play from "assets/play.png";
 import Navbar from './Navbar';
 import { motion } from "framer-motion";
 import { homeAnimation, homeInfoAnimation } from "animation";
-import { BsFacebook} from 'react-icons/bs';
-
+import { BsFacebook } from 'react-icons/bs';
+import booksyLogo from 'assets/booksyBack.png'; // Zaimportowanie logo Booksy z folderu assets
 
 function Home() {
   return (
     <Section id="home">
       <Navbar />
       <motion.div className="home"
-      variants={homeAnimation}
-      transition={{ delay: 0.3, duration: 0.6, type: "tween" }}
+        variants={homeAnimation}
+        transition={{ delay: 0.3, duration: 0.6, type: "tween" }}
       >
         <div className="content">
           <div className="title">
@@ -22,7 +22,7 @@ function Home() {
           </div>  
           <div className="subTitle">
             <p>
-            "Fryzjerzy to artyści, a włosy to ich płótno."
+              "Fryzjerzy to artyści, a włosy to ich płótno."
             </p>  
           </div>
           <img src={play} alt="Play Button" />
@@ -30,60 +30,62 @@ function Home() {
       </motion.div>
 
       <motion.div className="info"
-      variants={homeInfoAnimation}  
-      transition={{ delay: 0.3, duration: 0.6, type: "tween" }}
+        variants={homeInfoAnimation}  
+        transition={{ delay: 0.3, duration: 0.6, type: "tween" }}
       >
-          <div className="grid">
-            {/* <div className="col">
-                <strong>Zakład Fryzjerski</strong>
-                <p>Katarzyna Podhajska Fryzjerstwo</p>
-            </div> */}
-             <div className="col">
-                <strong>Adres</strong>
-                <p>ulica Świętojańska 83/83A</p>
-                <p>1A lokal w bramie, Gdynia, 81-389</p>
-            </div> 
-            <div className="col">
-                <strong>Email</strong>
-                <p>podhajskakatarzyna@gmail.com</p>
-            </div> 
-            <div className="col">
-                <strong>Telefon</strong>
-                <p>+48 508323986</p>
-            </div> 
-            <div className="col">
-                <strong>Social Media</strong>
-                <p>
-                  <BsFacebook/>
-                    <a 
-                        href="https://www.facebook.com/katarzyna.podhajskafryzjerstwo" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                      Facebook
-                    </a>
-                </p>
-                <p>
-                    <a 
-                        href="https://booksy.com/pl-pl/72069_katarzyna-podhajska-fryzjerstwo_fryzjer_21029_gdynia#ba_s=seo" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                    >
-                        Booksy
-                    </a>
-                </p>
-            </div>
-            <div className="col"> 
-                <strong>Godziny otwarcia</strong>
-                <p>Poniedziałek - Zamknięte</p>
-                <p>Wtorek       - 9:00 - 15:00</p>
-                <p>Środa        - 9:00 - 14:45</p>
-                <p>Czwartek     - 9:00 - 15:00</p>
-                <p>Piątek       - 11:00- 18:00</p>
-                <p>Sobota       - 9:00 - 15:00</p>
-                <p>Niedziela    - Zamknięte</p>
-            </div>   
+        <div className="grid">
+          <div className="col">
+            <strong>Adres</strong>
+            <p>ulica Świętojańska 83/83A</p>
+            <p>1A lokal w bramie, Gdynia, 81-389</p>
+          </div> 
+          <div className="col">
+            <strong>Email</strong>
+            <p>podhajskakatarzyna@gmail.com</p>
+          </div> 
+          <div className="col">
+            <strong>Telefon</strong>
+            <p>+48 508323986</p>
+          </div> 
+          <div className="col">
+            <strong>Social Media</strong>
+            <p>
+              <BsFacebook />
+              <p></p>
+              <a 
+                href="https://www.facebook.com/katarzyna.podhajskafryzjerstwo" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Facebook
+              </a>
+            </p>
+            <p>
+              {/* Zamiast napisu, teraz używamy logo Booksy */}
+              <a 
+                href="https://booksy.com/pl-pl/72069_katarzyna-podhajska-fryzjerstwo_fryzjer_21029_gdynia#ba_s=seo" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <img 
+                  src={booksyLogo} 
+                  alt="Booksy Logo" 
+                  style={{ width: '78px', marginRight: '8px' }} 
+                />
+              </a>
+            </p>
           </div>
+          <div className="col"> 
+            <strong>Godziny otwarcia</strong>
+            <p>Poniedziałek - Zamknięte</p>
+            <p>Wtorek       - 9:00 - 15:00</p>
+            <p>Środa        - 9:00 - 14:45</p>
+            <p>Czwartek     - 9:00 - 15:00</p>
+            <p>Piątek       - 11:00- 18:00</p>
+            <p>Sobota       - 9:00 - 15:00</p>
+            <p>Niedziela    - Zamknięte</p>
+          </div>   
+        </div>
       </motion.div>
     </Section>
   );
@@ -94,7 +96,7 @@ const Section = styled.section`
   min-height: 100vh;
   background-size: cover;
   position: relative;
-  .home{
+  .home {
     height: 100%;
     .content {
       display: flex;
@@ -134,8 +136,8 @@ const Section = styled.section`
     }
   }
   @media screen and (min-width: 280px) and (max-width: 1080px) {
-    background-position: top left; /* Przesunięcie tła w lewy dolny róg */
-    background-size: 210%; /* Powiększenie obrazu tła */
+    background-position: top left; 
+    background-size: 210%;
     .home {
       .content {
         padding-left: 2rem;
@@ -158,4 +160,4 @@ const Section = styled.section`
   }
 `;
 
-export default Home
+export default Home;
