@@ -203,15 +203,15 @@ const Section = styled.section`
 
   /* Możliwość dodania indywidualnych odstępów dla poszczególnych sekcji */
   .services__service:nth-child(1) .booksy-links {
-    margin-top: 3rem; /* Większy odstęp w pierwszej sekcji */
+    margin-top: -2rem; /* Większy odstęp w pierwszej sekcji */
   }
 
   .services__service:nth-child(2) .booksy-links {
-    margin-top: 11.5rem; /* Mniejszy odstęp w drugiej sekcji */
+    margin-top: 9rem; /* Mniejszy odstęp w drugiej sekcji */
   }
 
   .services__service:nth-child(3) .booksy-links {
-    margin-top: 8rem; /* Większy odstęp w trzeciej sekcji */
+    margin-top: 5rem; /* Większy odstęp w trzeciej sekcji */
   }
 `;
 
