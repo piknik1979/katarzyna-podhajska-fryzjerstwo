@@ -51,12 +51,12 @@ function Navbar() {
           <li>
             <a href="#portfolio">Portfolio</a>
           </li>
-          <li>
+          {/* <li>
             <a href="#pricing">Pakiety</a>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <a href="#video">Szopen Włosów</a>
-          </li>
+          </li> */}
           <li>
             <a href="#contact">Kontakt</a>
           </li>

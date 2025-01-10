@@ -1,45 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from "styled-components";
 import Title from './Title';
 import { motion } from "framer-motion";
 import { useScroll } from "./useScroll";
 import { contactAnimation } from "animation";
-import emailjs from 'emailjs-com';
+import booksyIcon from 'assets/logoBooksy.png'; // Zastąp właściwą ścieżką do ikony
 
 function Contact() {
   const [element, controls] = useScroll();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [status, setStatus] = useState('');
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
-      message: formData.message,
-    };
-
-    emailjs.send('piknik1979', 'template_gpk8jyb', templateParams, 'NXy1BGT7rnYvW5nnoD')
-      .then((response) => {
-        setStatus('Wiadomość wysłana pomyślnie!');
-        setFormData({ name: '', email: '', message: '' });
-      }, (error) => {
-        setStatus('Wystąpił błąd podczas wysyłania wiadomości.');
-      });
-  };
 
   return (
     <Section id="contact" ref={element}>
@@ -54,51 +22,45 @@ function Contact() {
         }}
       >
         <div className="contact__title">
-          <p>W razie pytań proszę o wiadomość:</p>
-          <h2>Dane kontaktowe</h2>
+       
         </div>
         <div className="contact__data">
           <div className="contact__data__description">
             <h4>Witam serdecznie!</h4>
             <p>Jeśli masz jakiekolwiek pytania, proszę nie wahaj się skontaktować:</p>
-            <p>Jesteśmy do Twojej dyspozycji. Czekamy na Twoje pytania!</p>
+            {/* <h2>Dane kontaktowe</h2> */}
             <div>
+         
               <p><strong>Adres:</strong> ulica Świętojańska 83/83A</p>
-              <p> 1A lokal w bramie, Gdynia, 81-389</p>
+              <p>1A lokal w bramie, Gdynia, 81-389</p>
               <p><strong>Email:</strong> podhajskakatarzyna@gmail.com</p>
-              <p><strong>Telefon:</strong> 508323986</p>
+              <p><strong>Telefon:</strong> +48 508323986</p>
             </div>
-          </div>  
-          <div className="contact__data__form">
-            <input
-              type="text"
-              name="name"
-              placeholder="Imię i nazwisko"
-              value={formData.name}
-              onChange={handleChange}
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={handleChange}
-            />
-            <textarea
-              name="message"
-              placeholder="Wiadomość"
-              value={formData.message}
-              onChange={handleChange}
-            />
-            <button onClick={handleSubmit}>Wyślij wiadomość</button>
-            {status && <p>{status}</p>}
+          </div>
+          <div className="contact__links">
+            <a 
+              href="https://booksy.com/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="booksy-link"
+            >
+              <img src={booksyIcon} alt="Booksy Icon" />
+            </a>
+            <a 
+              href="https://maps.app.goo.gl/uNLTCuFNUFaU6pvHA" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="map-link"
+            >
+              Otwórz w Google Maps
+            </a>
           </div>
         </div>
 
         {/* Google Maps iframe */}
         <div className="contact__map">
           <iframe
-            src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=54.512137898888106,18.539682888053047"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2191.2283988279446!2d18.537494776115724!3d54.512137898888106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd0c1f0adbc45b%3A0x2f0f61d2a905a45f!2s%C5%9Awi%C4%99toja%C5%84ska%2083%2C%2081-389%20Gdynia!5e0!3m2!1spl!2spl!4v1697051727697!5m2!1spl!2spl"
             width="100%"
             height="300"
             frameBorder="0"
@@ -120,7 +82,8 @@ const Section = styled.section`
     color: var(--primary-color);
     margin: 0 18rem;
     &__title {
-      margin: 6rem 0 2rem 0;
+      2rem;
+      text-align: left;
       p {
         text-transform: uppercase;
         color: var(--primary-color);
@@ -132,7 +95,7 @@ const Section = styled.section`
     }
     &__data {
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
+      grid-template-columns: 1fr;
       gap: 4rem;
       &__description {
         display: flex;
@@ -153,48 +116,40 @@ const Section = styled.section`
           }
         }
       }
-      &__form {
+      .contact__links {
         display: flex;
         flex-direction: column;
+        gap: 1rem;
         align-items: center;
-        gap: 2rem;
-        input,
-        textarea {
-          text-transform: uppercase;
-          border: none;
-          border-bottom: 0.1rem solid var(--secondary-color);
-          width: 100%;
+        .map-link {
           color: var(--secondary-color);
-          padding-bottom: 0.7rem;
-          &:focus {
-            outline: none;
-          }
-          &::placeholder {
-            color: var(--secondary-color);
-          }
-        }
-        textarea {
-          width: 100%;
-          height: 50%;
-          resize: none;
-        }
-        button {
-          width: 100%;
-          background-color: transparent;
+          text-transform: uppercase;
+          text-decoration: none;
           border: 0.1rem solid var(--secondary-color);
-          height: 3rem;
-          color: var(--secondary-color);
-          text-transform: uppercase;
-          cursor: pointer;
-          transition: 0.5s ease-in-out;
+          padding: 0.5rem;
+          text-align: center;
+          transition: 0.3s ease-in-out;
           &:hover {
             background-color: var(--secondary-color);
             color: #fff;
           }
         }
+        .booksy-link {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 1rem;
+          img {
+            width: 150px;
+            height: 150px;
+            transition: transform 0.3s;
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
       }
     }
-
     &__map {
       margin-top: 2rem;
     }
@@ -219,11 +174,6 @@ const Section = styled.section`
         margin: 0;
         p {
           text-align: left;
-        }
-        &__form {
-          button {
-            height: 6rem;
-          }
         }
       }
     }
