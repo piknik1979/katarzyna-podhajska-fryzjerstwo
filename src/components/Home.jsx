@@ -127,11 +127,11 @@ const Section = styled.section`
     bottom: 0rem;
     right: 0;
     background-color: var(--secondary-color);
-    padding: 4rem;
+    padding: 2rem;
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 4rem;
+      gap: 0rem;
       color: #fff;
     }
   }
