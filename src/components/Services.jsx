@@ -25,7 +25,7 @@ function Services() {
         </>
       ),
       image: service1,
-      booksyIcon: booksyIcon, // Domyślna ikona Booksy
+      booksyIcon: booksyIcon,
     },
     {
       type: 'Koloryzacja i Zabiegi Chemiczne',
@@ -37,7 +37,7 @@ function Services() {
         </>
       ),
       image: service2,
-      booksyIcon: booksyIconColoring, // Nowe logo dla Koloryzacji
+      booksyIcon: booksyIconColoring,
     },
     {
       type: 'Pielęgnacja i Regeneracja',
@@ -52,7 +52,7 @@ function Services() {
         </>
       ),
       image: service3,
-      booksyIcon: booksyIcon, // Domyślna ikona Booksy
+      booksyIcon: booksyIcon,
     },
   ];
 
@@ -95,13 +95,15 @@ function Services() {
 
 const Section = styled.section`
   min-height: 100vh;
+  justify-content: center;
 
   .services {
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     height: 100%;
-    margin: 0 14rem;
+    margin: 0 10rem;
     margin-top: 10rem;
     gap: 5rem;
 
@@ -143,10 +145,11 @@ const Section = styled.section`
   /* Wersja mobilna */
   @media screen and (max-width: 1080px) {
     .services {
-      display: block;
+      display: flex;
+      flex-direction: column;
       gap: 2rem;
       margin: 0;
-      padding: 1rem 0;
+      padding: 1rem;
 
       &__service {
         width: 100%;
@@ -159,59 +162,42 @@ const Section = styled.section`
           margin-bottom: 1rem;
         }
         &__title h2 {
-          font-size: 1.8rem;
-          line-height: 2rem;
+          font-size: 2rem;
+          line-height: 2.5rem;
         }
         &__description {
           font-size: 1rem;
-          white-space: normal;
         }
       }
     }
   }
 
-  /* Kontener dla ikon Booksy */
   .booksy-links {
     display: flex;
-    justify-content: center; /* Wycentrowanie ikon */
-    align-items: center; /* Wyrównanie ikon w jednej linii */
-    gap: 1.5rem; /* Odstęp pomiędzy ikonami */
-    margin-top: 1.5rem; /* Domyślny odstęp od tekstu */
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
   }
 
-  /* Stylowanie dla ikony Booksy */
   .booksy-link {
     display: flex;
     justify-content: center;
     align-items: center;
     img {
-      width: 180px; /* Domyślna szerokość ikony */
+      width: 180px;
       height: auto;
     }
   }
 
-  /* Stylowanie czarnego tła dla ikony Booksy w temacie Koloryzacja */
   .black-background {
     background-color: #000;
     border-radius: 50%;
     padding: 1rem;
     img {
-      width: 180px; /* Ikona Booksy w kategorii Koloryzacja ma tę samą szerokość */
+      width: 180px;
       height: auto;
     }
-  }
-
-  /* Możliwość dodania indywidualnych odstępów dla poszczególnych sekcji */
-  .services__service:nth-child(1) .booksy-links {
-    margin-top: -2rem; /* Większy odstęp w pierwszej sekcji */
-  }
-
-  .services__service:nth-child(2) .booksy-links {
-    margin-top: 9rem; /* Mniejszy odstęp w drugiej sekcji */
-  }
-
-  .services__service:nth-child(3) .booksy-links {
-    margin-top: 5rem; /* Większy odstęp w trzeciej sekcji */
   }
 `;
 

@@ -51,9 +51,9 @@ function Navbar() {
           <li>
             <a href="#portfolio">Portfolio</a>
           </li>
-          {/* <li>
-            <a href="#pricing">Pakiety</a>
-          </li> */}
+            <li>
+            <a href="#testimonials">Opinie</a>
+          </li> 
           {/* <li>
             <a href="#video">Szopen Włosów</a>
           </li> */}

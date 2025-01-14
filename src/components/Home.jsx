@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from "styled-components";
 import home from "assets/home.png";
-import play from "assets/play.png";
+// import play from "assets/play.png";
 import Navbar from './Navbar';
 import { motion } from "framer-motion";
 import { homeAnimation, homeInfoAnimation } from "animation";
 import { BsFacebook } from 'react-icons/bs';
-import booksyLogo from 'assets/booksyBack.png'; // Zaimportowanie logo Booksy z folderu assets
+import booksyLogo from 'assets/logoBooksyPink.png'; // Zaimportowanie logo Booksy z folderu assets
 
 function Home() {
   return (
@@ -20,12 +20,12 @@ function Home() {
           <div className="title">
             <h1>Katarzyna Podhajska Fryzjerstwo</h1>
           </div>  
-          <div className="subTitle">
+          {/* <div className="subTitle">
             <p>
               "Fryzjerzy to artyści, a włosy to ich płótno."
             </p>  
-          </div>
-          <img src={play} alt="Play Button" />
+          </div> */}
+          {/* <img src={play} alt="Play Button" /> */}
         </div>  
       </motion.div>
 
@@ -70,7 +70,6 @@ function Home() {
                 <img 
                   src={booksyLogo} 
                   alt="Booksy Logo" 
-                  style={{ width: '78px', marginRight: '8px' }} 
                 />
               </a>
             </p>
@@ -133,6 +132,12 @@ const Section = styled.section`
       grid-template-columns: repeat(3, 1fr);
       gap: 0rem;
       color: #fff;
+      .col {
+        img {
+          width: 234px; /* Powiększone logo dla obu wersji */
+          margin-right: 8px;
+        }
+      }
     }
   }
   @media screen and (min-width: 280px) and (max-width: 1080px) {
@@ -155,6 +160,11 @@ const Section = styled.section`
       position: initial;
       .grid {
         grid-template-columns: 1fr;
+        .col {
+          img {
+            width: 170px; /* Powiększone logo również na urządzeniach mobilnych */
+          }
+        }
       }
     }
   }

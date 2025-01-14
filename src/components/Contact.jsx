@@ -26,10 +26,11 @@ function Contact() {
         </div>
         <div className="contact__data">
           <div className="contact__data__description">
-            <h4>Witam serdecznie!</h4>
-            <p>Jeśli masz jakiekolwiek pytania, proszę nie wahaj się skontaktować:</p>
-            {/* <h2>Dane kontaktowe</h2> */}
+            <h4><p></p></h4>
+            {/* <p>Jeśli masz jakiekolwiek pytania, proszę nie wahaj się skontaktować:</p> */}
+            <h2>Dane kontaktowe</h2>
             <div>
+              <p><strong>Katarzyna Podhajska Fryzjerstwo</strong></p>
          
               <p><strong>Adres:</strong> ulica Świętojańska 83/83A</p>
               <p>1A lokal w bramie, Gdynia, 81-389</p>
@@ -54,6 +55,8 @@ function Contact() {
             >
               Otwórz w Google Maps
             </a>
+            <p></p>
+            <p></p>
           </div>
         </div>
 

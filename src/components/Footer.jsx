@@ -18,7 +18,7 @@ function Footer() {
         duration: 0.8,
       }}
       >
-        &copy; React Website Transition Animation
+        &copy; Katarzyna Podhajska Fryzjerstwo  |  Wszelkie Prawa Zastrzeżone
       </motion.span>
       <motion.div className="footer__social__icons"
       variants={footerTextAnimation}
