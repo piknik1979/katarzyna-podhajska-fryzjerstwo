@@ -163,22 +163,22 @@ const Section = styled.section`
     .images {
       display: flex;
       gap: 1rem;
-      width: 100%;
+      width: 80%;
       overflow: hidden;
       justify-content: center;
 
       .image {
         flex: 1;
-        max-width: 22%; /* Dla desktopu */
-        height: 800px;
-        object-fit: cover;
+        max-width: 100%; /* Zdjęcia rozciągają się na całą dostępna szerokość */
+        height: 500px; /* Jedna stała wysokość dla zdjęć */
+        object-fit: contain; /* Zachowanie proporcji zdjęcia */
         border-radius: 0.5rem;
         transition: transform 0.3s ease-in-out;
 
         /* Na mobilnej 1 zdjęcie między strzałkami */
         @media screen and (max-width: 1080px) {
-          max-width: 60%; /* Zajmuje przestrzeń między strzałkami */
-          height: 400px; /* Wyższe niż szersze */
+          max-width: 100%;
+          height: 450px;
         }
       }
     }
@@ -200,7 +200,7 @@ const Section = styled.section`
 
         @media screen and (max-width: 1080px) {
           padding: 0.2rem 0.4rem; /* Małe strzałki */
-          font-size: 0.8rem;
+          font-size: 2.5rem;
         }
       }
     }
