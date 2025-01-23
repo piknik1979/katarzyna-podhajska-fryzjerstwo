@@ -77,72 +77,15 @@ function Portfolio() {
   const [startIndex, setStartIndex] = useState(0);
 
   const images = [
-    portfolio01,
-    portfolio02,
-    portfolio03,
-    portfolio04,
-    portfolio05,
-    portfolio06,
-    portfolio07,
-    portfolio08,
-    portfolio09,
-    portfolio10,
-    portfolio11,
-    portfolio12,
-    portfolio13,
-    portfolio14,
-    portfolio15,
-    portfolio16,
-    portfolio17,
-    portfolio18,
-    portfolio19,
-    portfolio20,
-    portfolio21,
-    portfolio22,
-    portfolio23,
-    portfolio24,
-    portfolio25,
-    portfolio26,
-    portfolio27,
-    portfolio28,
-    portfolio29,
-    portfolio30,
-    portfolio31,
-    portfolio32,
-    portfolio33,
-    portfolio34,
-    portfolio35,
-    portfolio36,
-    portfolio37,
-    portfolio38,
-    portfolio39,
-    portfolio40,
-    portfolio41,
-    portfolio42,
-    portfolio43,
-    portfolio44,
-    portfolio45,
-    portfolio46,
-    portfolio47,
-    portfolio48,
-    portfolio49,
-    portfolio50,
-    portfolio51,
-    portfolio52,
-    portfolio53,
-    portfolio54,
-    portfolio55,
-    portfolio56,
-    portfolio57,
-    portfolio58,
-    portfolio59,
-    portfolio60,
-    portfolio61,
-    portfolio62,
-    portfolio63,
-    portfolio64,
-    portfolio65,
-    portfolio66,
+    portfolio01, portfolio02, portfolio03, portfolio04, portfolio05, portfolio06, portfolio07, portfolio08,
+    portfolio09, portfolio10, portfolio11, portfolio12, portfolio13, portfolio14, portfolio15, portfolio16,
+    portfolio17, portfolio18, portfolio19, portfolio20, portfolio21, portfolio22, portfolio23, portfolio24,
+    portfolio25, portfolio26, portfolio27, portfolio28, portfolio29, portfolio30, portfolio31, portfolio32,
+    portfolio33, portfolio34, portfolio35, portfolio36, portfolio37, portfolio38, portfolio39, portfolio40,
+    portfolio41, portfolio42, portfolio43, portfolio44, portfolio45, portfolio46, portfolio47, portfolio48,
+    portfolio49, portfolio50, portfolio51, portfolio52, portfolio53, portfolio54, portfolio55, portfolio56,
+    portfolio57, portfolio58, portfolio59, portfolio60, portfolio61, portfolio62, portfolio63, portfolio64,
+    portfolio65, portfolio66,
   ];
 
   const itemsToShow = window.innerWidth < 1080 ? 1 : 4; // 1 zdjęcie na mobilnej, 4 na desktopowej
@@ -164,9 +107,6 @@ function Portfolio() {
         animate={controls}
         transition={{ delay: 0.03, type: "tween", duration: 0.8 }}
       >
-        <button className="prev" onClick={handlePrev}>
-          &lt;
-        </button>
         <div className="images">
           {images
             .slice(startIndex, startIndex + itemsToShow)
@@ -183,9 +123,14 @@ function Portfolio() {
               />
             ))}
         </div>
-        <button className="next" onClick={handleNext}>
-          &gt;
-        </button>
+        <div className="arrows">
+          <button className="prev" onClick={handlePrev}>
+            &lt;
+          </button>
+          <button className="next" onClick={handleNext}>
+            &gt;
+          </button>
+        </div>
       </motion.div>
     </Section>
   );
@@ -213,6 +158,7 @@ const Section = styled.section`
     gap: 1rem;
     width: 100%;
     position: relative;
+    flex-direction: column; /* Zmieniamy na kolumnę, aby strzałki były pod zdjęciami */
 
     .images {
       display: flex;
@@ -237,55 +183,24 @@ const Section = styled.section`
       }
     }
 
-    button {
-      background-color: var(--primary-color);
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      z-index: 10;
-      transition: all 0.3s ease;
+    .arrows {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
 
-      /* Strzałki dla desktop */
-      padding: 0.5rem 1.2rem;
-      font-size: 1.5rem;
+      button {
+        background-color: var(--primary-color);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem 1.2rem;
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
 
-      /* Strzałki dla mobilnych */
-      @media screen and (max-width: 1080px) {
-        padding: 0.2rem 0.4rem; /* Małe strzałki */
-        font-size: 0.8rem;
-      }
-    }
-
-    .prev {
-      position: absolute;
-      left: 1rem; /* Węższe odstępy na mobilnej */
-      transform: translateY(-50%);
-
-      /* Mobilna wersja */
-      @media screen and (max-width: 1080px) {
-        left: 0.2rem;
-      }
-    }
-
-    .next {
-      position: absolute;
-      right: 1rem;
-      transform: translateY(-50%);
-
-      /* Mobilna wersja */
-      @media screen and (max-width: 1080px) {
-        right: 0.2rem;
-      }
-    }
-  }
-
-  /* Centrowanie dla obu wersji */
-  @media screen and (min-width: 280px) and (max-width: 1080px) {
-    .carousel {
-      .images {
-        .image {
-          max-width: 60%; /* Zdjęcie między strzałkami */
-          height: 400px; /* Wyższe proporcje */
+        @media screen and (max-width: 1080px) {
+          padding: 0.2rem 0.4rem; /* Małe strzałki */
+          font-size: 0.8rem;
         }
       }
     }
