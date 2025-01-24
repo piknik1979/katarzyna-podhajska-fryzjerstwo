@@ -167,6 +167,22 @@ const Section = styled.section`
         height: 8rem;
       }
     }
+    .circle2 {
+  width: 50px; /* Rozmiar okręgu */
+  height: 50px; /* Rozmiar okręgu */
+  border-radius: 50%; /* Tworzy okrąg */
+  background-color: #8860e6; /* Fioletowe tło */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.circle2 img {
+  width: 100%; /* Rozmiar obrazka, dopasowanie do okręgu */
+  height: 100%; /* Rozmiar obrazka, dopasowanie do okręgu */
+  object-fit: contain;
+}
 
     .booksy-link-container {
       display: flex;
