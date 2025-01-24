@@ -121,12 +121,12 @@ const Section = styled.section`
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 0.6rem;
+      gap: 2rem; /* Większy odstęp między kolumnami w wersji desktopowej */
       color: #fff;
 
       .col {
         /* Wszystkie kolumny mają taki sam margines */
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
 
         img {
           width: 234px; /* Powiększone logo dla obu wersji */
@@ -134,14 +134,14 @@ const Section = styled.section`
         }
 
         .booksyLink {
-          margin-bottom: 0rem; /* Dodany odstęp poniżej logo Booksy */
+          margin-bottom: 0rem;
         }
 
         .facebookLink {
           display: flex;
           align-items: center;
-          margin-top: 0rem; /* Usunięcie marginesu z góry */
-          margin-bottom: 0rem; /* Usunięcie marginesu z dołu */
+          margin-top: 0rem;
+          margin-bottom: 0rem;
         }
 
         .facebookLink a {
@@ -189,9 +189,10 @@ const Section = styled.section`
       position: initial;
       .grid {
         grid-template-columns: 1fr;
+        gap: 1rem; /* Mniejszy odstęp w wersji mobilnej */
         .col {
           img {
-            width: 170px; /* Powiększone logo również na urządzeniach mobilnych */
+            width: 170px;
           }
         }
       }
@@ -201,7 +202,7 @@ const Section = styled.section`
   .socialLinks {
     display: flex;
     align-items: center;
-    gap: 1rem; /* Równy odstęp między Booksy a Facebook */
+    gap: 1rem; /* Równy odstęp między Booksy a Facebook w wersji desktopowej */
   }
 `;
 
