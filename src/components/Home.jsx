@@ -108,7 +108,7 @@ const Section = styled.section`
       padding-left: 18rem;
       .title {
         h1 {
-          font-size: 5rem;
+          font-size: 4.8rem;
           line-height: 5.3rem;
           color: #e47194;
         }
