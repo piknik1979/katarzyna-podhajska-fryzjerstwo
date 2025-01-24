@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import loadmore from "assets/loadmore.png";
-import booksyLogo from "assets/booksyBack.png"; // Dodaj logo Booksy
+import booksyLogo from "assets/booksyBack.png"; 
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useScroll } from "./useScroll";
@@ -10,7 +10,6 @@ function Testimonials() {
   const [element, controls] = useScroll();
   const [selected, setSelected] = useState(0);
 
-  // Zaktualizowana tablica z linkiem do Booksy
   const testimonials = [
     {
       designation: "Strzyżenie damskie. Włosy krótkie z modelowaniem",
@@ -70,6 +69,16 @@ function Testimonials() {
     }
   ];
 
+  const nextTestimonial = () => {
+    setSelected((prevSelected) => (prevSelected + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setSelected((prevSelected) =>
+      prevSelected === 0 ? testimonials.length - 1 : prevSelected - 1
+    );
+  };
+
   return (
     <Section id="testimonials" ref={element}>
       <div className="container">
@@ -109,26 +118,16 @@ function Testimonials() {
             );
           })}
         </motion.div>
-        <motion.div
-          className="controls"
-          variants={testimonialsAnimations}
-          animate={controls}
-          transition={{
-            delay: 0.03,
-            type: "tween",
-            duration: 0.8,
-          }}
-        >
-          {testimonials.map((_, index) => (
-            <button
-              className={selected === index ? "active" : ""}
-              onClick={() => {
-                setSelected(index);
-              }}
-              key={index}
-            ></button>
-          ))}
-        </motion.div>
+
+        {/* Strzałki poniżej */}
+        <div className="controls">
+          <button className="prev" onClick={prevTestimonial}>
+            ←
+          </button>
+          <button className="next" onClick={nextTestimonial}>
+            →
+          </button>
+        </div>
       </div>
     </Section>
   );
@@ -145,6 +144,8 @@ const Section = styled.section`
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    position: relative;
+
     .testimonials {
       display: flex;
       gap: 1rem;
@@ -156,18 +157,7 @@ const Section = styled.section`
         flex-direction: column;
         align-items: center;
         gap: 1rem;
-        .image {
-          position: relative;
-          .circle2 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 10rem;
-            width: 10rem;
-            border-radius: 10rem;
-            background-color: #8860e6b0;
-          }
-        }
+        min-height: 25rem; /* Stała wysokość dla opinii */
       }
       .hidden {
         display: none;
@@ -178,7 +168,6 @@ const Section = styled.section`
       }
     }
 
-    /* Nowa sekcja z ikoną Booksy */
     .booksy-link-container {
       display: flex;
       justify-content: center;
@@ -197,26 +186,30 @@ const Section = styled.section`
     }
 
     .controls {
+      position: absolute;
+      bottom: 7rem; /* Ustawienie strzałek na dole */
       display: flex;
+      justify-content: center;
       gap: 1rem;
+      
       button {
-        padding: 0.5rem;
-        border-radius: 1rem;
-        background-color: var(--secondary-color);
-        border: 0.1rem solid transparent;
+        padding: 0.5rem 1rem;
+        border-radius: 50%;
+        background-color: #8860e6b0;
+        border: none;
         cursor: pointer;
-      }
-      .active {
-        background-color: transparent;
-        border: 0.1rem solid var(--secondary-color);
+        color: white;
+        font-size: 1.5rem;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #8860e6;
+        }
       }
     }
   }
 
   @media screen and (min-width: 280px) and (max-width: 1080px) {
-    .background {
-      display: none;
-    }
     .container {
       padding: 4rem 0;
       .testimonials {
