@@ -43,30 +43,32 @@ function Home() {
           </div> 
           <div className="col"> 
             <strong>Social Media</strong>
-            {/* Umieszczamy Booksy nad Facebookiem */}
-            <p className="booksyLink">
-              <a 
-                href="https://booksy.com/pl-pl/72069_katarzyna-podhajska-fryzjerstwo_fryzjer_21029_gdynia#ba_s=seo" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <img 
-                  src={booksyLogo} 
-                  alt="Booksy Logo" 
-                  className="booksyLogo"
-                />
-              </a>
-            </p>
-            <p className="facebookLink">
-              <a 
-                href="https://www.facebook.com/katarzyna.podhajskafryzjerstwo" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <BsFacebook />
-                <span>Facebook</span> {/* Dodany tag <span> */}
-              </a>
-            </p>
+            {/* Umieszczamy Booksy i Facebook obok siebie */}
+            <div className="socialLinks">
+              <p className="booksyLink">
+                <a 
+                  href="https://booksy.com/pl-pl/72069_katarzyna-podhajska-fryzjerstwo_fryzjer_21029_gdynia#ba_s=seo" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <img 
+                    src={booksyLogo} 
+                    alt="Booksy Logo" 
+                    className="booksyLogo"
+                  />
+                </a>
+              </p>
+              <p className="facebookLink">
+                <a 
+                  href="https://www.facebook.com/katarzyna.podhajskafryzjerstwo" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <BsFacebook />
+                  <span>Facebook</span> {/* Dodany tag <span> */}
+                </a>
+              </p>
+            </div>
           </div>
           <div className="col"> 
             <strong>Godziny otwarcia</strong>
@@ -121,14 +123,14 @@ const Section = styled.section`
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 0.6rem;
+      gap: 1.5rem;
       color: #fff;
 
       .col {
         img {
           width: 234px; /* Powiększone logo dla obu wersji */
           margin-right: 8px;
-          margin-bottom: 1rem; /* Dodany odstęp dolny między logo Booksy a Facebookiem */
+          margin-bottom: 0rem; /* Dodany odstęp dolny między logo Booksy a Facebookiem */
         }
 
         .booksyLink {
@@ -138,7 +140,7 @@ const Section = styled.section`
         .facebookLink {
           display: flex;
           align-items: center;
-          margin-top: 1rem; /* Opcjonalnie, jeśli chcesz odstęp od góry */
+          margin-top: 0.5rem; /* Opcjonalnie, jeśli chcesz odstęp od góry */
           margin-bottom: 2rem; /* Większy odstęp między Facebookiem a godzinami otwarcia */
         }
 
@@ -152,8 +154,8 @@ const Section = styled.section`
         }
 
         .facebookLink svg {
-          font-size: 1.8rem;
-          margin-right: 10px; /* Dodany margines między ikoną a tekstem */
+          font-size: 3.0rem;
+          margin-right: 7px; /* Mniejszy margines między ikoną a tekstem */
         }
 
         .facebookLink span {
@@ -192,6 +194,12 @@ const Section = styled.section`
         }
       }
     }
+  }
+
+  .socialLinks {
+    display: flex;
+    align-items: center; /* Wyśrodkowanie ikon */
+    gap: 0.5rem; /* Zmniejszony odstęp między logo Booksy a ikoną Facebooka */
   }
 `;
 
