@@ -25,7 +25,6 @@ function Home() {
               "Fryzjerzy to artyści, a włosy to ich płótno."
             </p>  
           </div> */}
-          {/* <img src={play} alt="Play Button" /> */}
         </div>  
       </motion.div>
 
@@ -47,21 +46,10 @@ function Home() {
             <strong>Telefon</strong>
             <p>+48 508323986</p>
           </div> 
-          <div className="col">
+          <div className="col"> 
             <strong>Social Media</strong>
+            {/* Umieszczamy Booksy nad Facebookiem */}
             <p>
-              <BsFacebook />
-              <p></p>
-              <a 
-                href="https://www.facebook.com/katarzyna.podhajskafryzjerstwo" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                Facebook
-              </a>
-            </p>
-            <p>
-              {/* Zamiast napisu, teraz używamy logo Booksy */}
               <a 
                 href="https://booksy.com/pl-pl/72069_katarzyna-podhajska-fryzjerstwo_fryzjer_21029_gdynia#ba_s=seo" 
                 target="_blank" 
@@ -70,7 +58,18 @@ function Home() {
                 <img 
                   src={booksyLogo} 
                   alt="Booksy Logo" 
+                  className="booksyLogo"
                 />
+              </a>
+            </p>
+            <p>
+              <BsFacebook />
+              <a 
+                href="https://www.facebook.com/katarzyna.podhajskafryzjerstwo" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Facebook
               </a>
             </p>
           </div>
@@ -95,6 +94,7 @@ const Section = styled.section`
   min-height: 100vh;
   background-size: cover;
   position: relative;
+
   .home {
     height: 100%;
     .content {
@@ -113,25 +113,22 @@ const Section = styled.section`
           color: #e47194;
         }
       }
-      .subTitle {
-        p {
-          width: 70%;
-          margin-bottom: 2rem;
-        }
-      }
     }
   }
+
   .info {
     position: absolute;
     bottom: 0rem;
     right: 0;
     background-color: var(--secondary-color);
     padding: 2rem;
+
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 0rem;
       color: #fff;
+
       .col {
         img {
           width: 234px; /* Powiększone logo dla obu wersji */
@@ -140,9 +137,11 @@ const Section = styled.section`
       }
     }
   }
+
   @media screen and (min-width: 280px) and (max-width: 1080px) {
     background-position: top left; 
     background-size: 210%;
+    
     .home {
       .content {
         padding-left: 2rem;
