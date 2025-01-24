@@ -20,11 +20,6 @@ function Home() {
           <div className="title">
             <h1>Katarzyna Podhajska Fryzjerstwo</h1>
           </div>  
-          {/* <div className="subTitle">
-            <p>
-              "Fryzjerzy to artyści, a włosy to ich płótno."
-            </p>  
-          </div> */}
         </div>  
       </motion.div>
 
@@ -49,7 +44,7 @@ function Home() {
           <div className="col"> 
             <strong>Social Media</strong>
             {/* Umieszczamy Booksy nad Facebookiem */}
-            <p>
+            <p className="booksyLink">
               <a 
                 href="https://booksy.com/pl-pl/72069_katarzyna-podhajska-fryzjerstwo_fryzjer_21029_gdynia#ba_s=seo" 
                 target="_blank" 
@@ -62,14 +57,14 @@ function Home() {
                 />
               </a>
             </p>
-            <p>
-              <BsFacebook />
+            <p className="facebookLink">
               <a 
                 href="https://www.facebook.com/katarzyna.podhajskafryzjerstwo" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                Facebook
+                <BsFacebook />
+                <span>Facebook</span> {/* Dodany tag <span> */}
               </a>
             </p>
           </div>
@@ -126,13 +121,43 @@ const Section = styled.section`
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 0rem;
+      gap: 0.6rem;
       color: #fff;
 
       .col {
         img {
           width: 234px; /* Powiększone logo dla obu wersji */
           margin-right: 8px;
+          margin-bottom: 1rem; /* Dodany odstęp dolny między logo Booksy a Facebookiem */
+        }
+
+        .booksyLink {
+          margin-bottom: 1rem; /* Dodany odstęp poniżej logo Booksy */
+        }
+
+        .facebookLink {
+          display: flex;
+          align-items: center;
+          margin-top: 1rem; /* Opcjonalnie, jeśli chcesz odstęp od góry */
+          margin-bottom: 2rem; /* Większy odstęp między Facebookiem a godzinami otwarcia */
+        }
+
+        .facebookLink a {
+          display: flex;
+          align-items: center;
+          color: #fff;
+          text-decoration: none; /* Usunięcie podkreślenia */
+          font-weight: normal; /* Możesz zmienić wagę czcionki */
+          transition: color 0.3s ease;
+        }
+
+        .facebookLink svg {
+          font-size: 1.8rem;
+          margin-right: 10px; /* Dodany margines między ikoną a tekstem */
+        }
+
+        .facebookLink span {
+          font-size: 1rem; /* Można dostosować wielkość tekstu */
         }
       }
     }
@@ -155,6 +180,7 @@ const Section = styled.section`
         }
       }
     }
+
     .info {
       position: initial;
       .grid {
