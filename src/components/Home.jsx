@@ -42,8 +42,6 @@ function Home() {
             <p>+48 508323986</p>
           </div> 
           <div className="col"> 
-            {/* <strong>Social Media</strong> */}
-            {/* Umieszczamy Booksy i Facebook obok siebie */}
             <div className="socialLinks">
               <p className="booksyLink">
                 <a 
@@ -65,7 +63,7 @@ function Home() {
                   rel="noopener noreferrer"
                 >
                   <BsFacebook />
-                  <span>Facebook</span> {/* Dodany tag <span> */}
+                  <span>Facebook</span>
                 </a>
               </p>
             </div>
@@ -123,43 +121,47 @@ const Section = styled.section`
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+      gap: 0.6rem;
       color: #fff;
 
       .col {
+        /* Wszystkie kolumny mają taki sam margines */
+        margin-bottom: 1rem;
+
         img {
           width: 234px; /* Powiększone logo dla obu wersji */
           margin-right: 8px;
-          margin-bottom: 0rem; /* Dodany odstęp dolny między logo Booksy a Facebookiem */
         }
 
         .booksyLink {
-          margin-bottom: 1rem; /* Dodany odstęp poniżej logo Booksy */
+          margin-bottom: 0rem; /* Dodany odstęp poniżej logo Booksy */
         }
 
         .facebookLink {
           display: flex;
           align-items: center;
-          margin-top: 0.5rem; /* Opcjonalnie, jeśli chcesz odstęp od góry */
-          margin-bottom: 2rem; /* Większy odstęp między Facebookiem a godzinami otwarcia */
+          margin-top: 0rem; /* Usunięcie marginesu z góry */
+          margin-bottom: 0rem; /* Usunięcie marginesu z dołu */
         }
 
         .facebookLink a {
           display: flex;
           align-items: center;
           color: #fff;
-          text-decoration: none; /* Usunięcie podkreślenia */
-          font-weight: normal; /* Możesz zmienić wagę czcionki */
+          text-decoration: none;
+          font-weight: normal;
           transition: color 0.3s ease;
         }
 
         .facebookLink svg {
-          font-size: 3.0rem;
-          margin-right: 7px; /* Mniejszy margines między ikoną a tekstem */
+          font-size: 1.8rem;
+          margin-right: 8px;
+          margin-top: -0.3rem;
         }
 
         .facebookLink span {
-          font-size: 1rem; /* Można dostosować wielkość tekstu */
+          font-size: 1rem;
+          line-height: 1.8rem;
         }
       }
     }
@@ -198,8 +200,8 @@ const Section = styled.section`
 
   .socialLinks {
     display: flex;
-    align-items: center; /* Wyśrodkowanie ikon */
-    gap: 0.5rem; /* Zmniejszony odstęp między logo Booksy a ikoną Facebooka */
+    align-items: center;
+    gap: 1rem; /* Równy odstęp między Booksy a Facebook */
   }
 `;
 
