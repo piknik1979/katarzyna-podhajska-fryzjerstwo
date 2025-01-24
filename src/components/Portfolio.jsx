@@ -75,6 +75,8 @@ import { portfolioAnimations } from "animation";
 function Portfolio() {
   const [element, controls] = useScroll();
   const [startIndex, setStartIndex] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(null);
 
   const images = [
     portfolio01, portfolio02, portfolio03, portfolio04, portfolio05, portfolio06, portfolio07, portfolio08,
@@ -88,7 +90,7 @@ function Portfolio() {
     portfolio65, portfolio66,
   ];
 
-  const itemsToShow = window.innerWidth < 1080 ? 1 : 4; // 1 zdjęcie na mobilnej, 4 na desktopowej
+  const itemsToShow = window.innerWidth < 1080 ? 1 : 4;
 
   const handleNext = () => {
     setStartIndex((prev) => (prev + 1) % images.length);
@@ -96,6 +98,16 @@ function Portfolio() {
 
   const handlePrev = () => {
     setStartIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const handleImageClick = (image) => {
+    setCurrentImage(image);
+    setIsOpen(true);
+  };
+
+  const closeImage = () => {
+    setIsOpen(false);
+    setCurrentImage(null);
   };
 
   return (
@@ -120,6 +132,7 @@ function Portfolio() {
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
+                onClick={() => handleImageClick(image)}
               />
             ))}
         </div>
@@ -132,6 +145,15 @@ function Portfolio() {
           </button>
         </div>
       </motion.div>
+
+      {isOpen && (
+        <FullscreenImage onClick={closeImage}>
+          <img src={currentImage} alt="Fullscreen" className="image" />
+          <button className="close-btn" onClick={closeImage}>
+            ×
+          </button>
+        </FullscreenImage>
+      )}
     </Section>
   );
 }
@@ -158,7 +180,7 @@ const Section = styled.section`
     gap: 1rem;
     width: 100%;
     position: relative;
-    flex-direction: column; /* Zmieniamy na kolumnę, aby strzałki były pod zdjęciami */
+    flex-direction: column;
 
     .images {
       display: flex;
@@ -169,16 +191,15 @@ const Section = styled.section`
 
       .image {
         flex: 1;
-        max-width: 100%; /* Zdjęcia rozciągają się na całą dostępna szerokość */
-        height: 500px; /* Jedna stała wysokość dla zdjęć */
-        object-fit: contain; /* Zachowanie proporcji zdjęcia */
+        max-width: 100%;
+        height: 500px;
+        object-fit: contain;
         border-radius: 0.5rem;
         transition: transform 0.3s ease-in-out;
 
-        /* Na mobilnej 1 zdjęcie między strzałkami */
-        @media screen and (max-width: 1080px) {
-          max-width: 100%;
-          height: 450px;
+        &:hover {
+          transform: scale(1.05);
+          cursor: pointer;
         }
       }
     }
@@ -199,11 +220,43 @@ const Section = styled.section`
         transition: all 0.3s ease;
 
         @media screen and (max-width: 1080px) {
-          padding: 0.2rem 0.4rem; /* Małe strzałki */
+          padding: 0.2rem 0.4rem;
           font-size: 2.5rem;
         }
       }
     }
+  }
+`;
+
+const FullscreenImage = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+  .image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    cursor: pointer;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10000;
   }
 `;
 
