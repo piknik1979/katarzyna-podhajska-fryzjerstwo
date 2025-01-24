@@ -42,7 +42,7 @@ function Home() {
             <p>+48 508323986</p>
           </div> 
           <div className="col"> 
-            <strong>Social Media</strong>
+            {/* <strong>Social Media</strong> */}
             {/* Umieszczamy Booksy i Facebook obok siebie */}
             <div className="socialLinks">
               <p className="booksyLink">
