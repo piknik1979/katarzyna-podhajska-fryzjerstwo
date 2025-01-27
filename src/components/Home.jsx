@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
 import home from "assets/home.png";
-// import play from "assets/play.png";
 import Navbar from './Navbar';
 import { motion } from "framer-motion";
 import { homeAnimation, homeInfoAnimation } from "animation";
@@ -103,9 +102,12 @@ const Section = styled.section`
       padding-left: 18rem;
       .title {
         h1 {
-          font-size: 4.8rem;
-          line-height: 5.3rem;
+          font-size: clamp(2rem, 6vw, 4.8rem); /* Responsywna wielkość czcionki */
+          line-height: 1.2; /* Utrzymanie spójnego odstępu między liniami */
           color: #e47194;
+          text-align: left;
+          word-wrap: break-word; /* Zawijanie tekstu, jeśli jest zbyt długi */
+          overflow-wrap: break-word;
         }
       }
     }
@@ -117,6 +119,8 @@ const Section = styled.section`
     right: 0;
     background-color: var(--secondary-color);
     padding: 2rem;
+    // width: 850px;
+    // height: 380px;
 
     .grid {
       display: grid;
@@ -125,7 +129,6 @@ const Section = styled.section`
       color: #fff;
 
       .col {
-        /* Wszystkie kolumny mają taki sam margines */
         margin-bottom: 2rem;
 
         img {
@@ -178,8 +181,8 @@ const Section = styled.section`
         margin-bottom: 2rem;
         .title {
           h1 {
-            font-size: 4rem;
-            line-height: 4rem;
+            font-size: clamp(3rem, 9vw, 6rem); /* Zmniejszenie maksymalnego rozmiaru */
+            text-align: center; /* Opcjonalnie wyśrodkowanie na mobilkach */
           }
         }
       }
